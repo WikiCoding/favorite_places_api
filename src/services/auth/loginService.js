@@ -25,7 +25,7 @@ const loginService = async (req, res) => {
 
   user.token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: Math.floor(Date.now() / 1000) + (24 * 3600 * 7) }); // 1 week
 
-  res.status(200).send({ user });
+  res.status(200).send(user);
 
 }
 
